@@ -15,8 +15,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        Parse.setApplicationId("64Hdpp0OMRYy7hlDK5H0tfmsD02X1Vu6ophbBHrv", clientKey: "mLjUvjIpP76kp51OKKyVEZK80MDVodabETKhIa6u")
+        
+        let notificationTypes : UIUserNotificationType = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+        let notificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
         // Override point for customization after application launch.
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        var allowTypes = notificationSettings.types
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("my Token is ", deviceToken)
+        var currentInstalation = PFInstallation.currentInstallation()
+        currentInstalation.setDeviceTokenFromData(deviceToken)
+        currentInstalation.saveInBackgroundWithTarget(self, selector: nil)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("fail to get token", error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        println("got push notification!")
     }
 
     func applicationWillResignActive(application: UIApplication) {
