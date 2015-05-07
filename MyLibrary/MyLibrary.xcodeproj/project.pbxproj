@@ -140,12 +140,7 @@
 		DB20635C1AFA9F7100A9BC6F = {
 			isa = PBXGroup;
 			children = (
-				4AD9AC2D1AFBCCC400E9B1FE /* Bolts.framework */,
-				4AD9AC2E1AFBCCC400E9B1FE /* Parse.framework */,
-				4AD9AC2F1AFBCCC400E9B1FE /* ParseCrashReporting.framework */,
-				4AD9AC301AFBCCC400E9B1FE /* ParseFacebookUtils.framework */,
-				4AD9AC311AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework */,
-				4AD9AC321AFBCCC400E9B1FE /* ParseUI.framework */,
+				DB29C8691AFBDA8200FEDFFF /* Frameworks */,
 				4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */,
 				4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */,
 				4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */,
@@ -223,6 +218,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DB29C8691AFBDA8200FEDFFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AD9AC2D1AFBCCC400E9B1FE /* Bolts.framework */,
+				4AD9AC2E1AFBCCC400E9B1FE /* Parse.framework */,
+				4AD9AC2F1AFBCCC400E9B1FE /* ParseCrashReporting.framework */,
+				4AD9AC301AFBCCC400E9B1FE /* ParseFacebookUtils.framework */,
+				4AD9AC311AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework */,
+				4AD9AC321AFBCCC400E9B1FE /* ParseUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -272,6 +280,11 @@
 				TargetAttributes = {
 					DB2063641AFA9F7100A9BC6F = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					DB2063791AFA9F7100A9BC6F = {
 						CreatedOnToolsVersion = 6.3.1;
