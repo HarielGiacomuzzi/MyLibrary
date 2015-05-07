@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-422" y="313"/>
+        </scene>
+        <!--Busca-->
+        <scene sceneID="uMn-PM-tjg">
+            <objects>
+                <viewController id="qgO-RC-RwY" customClass="MapViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EgL-1K-7by"/>
+                        <viewControllerLayoutGuide type="bottom" id="wg9-j9-BWV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bxH-Qd-pCw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-nu-LA2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Kh-nu-LA2" firstAttribute="leading" secondItem="bxH-Qd-pCw" secondAttribute="leading" id="BjB-1A-7L5"/>
+                            <constraint firstItem="7Kh-nu-LA2" firstAttribute="top" secondItem="bxH-Qd-pCw" secondAttribute="top" id="GvI-Vy-DtZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7Kh-nu-LA2" secondAttribute="trailing" id="Uch-jM-ZRx"/>
+                            <constraint firstItem="wg9-j9-BWV" firstAttribute="top" secondItem="7Kh-nu-LA2" secondAttribute="bottom" id="hpA-8l-hzb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Busca" id="9vH-nj-RGI">
+                        <barButtonItem key="rightBarButtonItem" image="info" id="P7R-jO-NWz"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKl-st-Vig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="-212"/>
+        </scene>
+        <!--Meus Livros-->
+        <scene sceneID="HzB-ma-8Jx">
+            <objects>
+                <viewController id="gav-Tu-UYU" customClass="MeusLivrosViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B5V-sa-yeD"/>
+                        <viewControllerLayoutGuide type="bottom" id="oY2-Y1-Q2k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="olG-sq-7gD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="M9n-jr-wIk">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M9n-jr-wIk" firstAttribute="top" secondItem="B5V-sa-yeD" secondAttribute="bottom" id="5rY-qk-FU7"/>
+                            <constraint firstAttribute="trailing" secondItem="M9n-jr-wIk" secondAttribute="trailing" id="6dv-ij-IOt"/>
+                            <constraint firstAttribute="bottom" secondItem="M9n-jr-wIk" secondAttribute="bottom" id="cV5-r7-hhl"/>
+                            <constraint firstItem="M9n-jr-wIk" firstAttribute="leading" secondItem="olG-sq-7gD" secondAttribute="leading" id="pmP-9T-Fn0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Meus Livros" id="ba8-BQ-ofR">
+                        <barButtonItem key="leftBarButtonItem" image="logout" id="hE8-vL-02G" userLabel="Logout Bar Button"/>
+                        <barButtonItem key="rightBarButtonItem" image="info" id="FA4-Hr-7QF"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bu0-sI-g8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="-919"/>
+        </scene>
+        <!--Onde encontrar?-->
+        <scene sceneID="U2E-Bc-nlE">
+            <objects>
+                <viewController id="ltf-wD-JEC" customClass="BeaconViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9rj-dz-8jF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hf5-9A-Iff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zYS-7F-oqv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Onde encontrar?" id="8p9-Gb-w1x">
+                        <barButtonItem key="rightBarButtonItem" image="info" id="yeA-fY-syM"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJQ-KF-DZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="495"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="N2Q-74-gLC">
+            <objects>
+                <tabBarController id="bTt-s8-uqh" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="b4F-Ph-x2N">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WWC-4w-mZI" kind="relationship" relationship="viewControllers" id="aqc-ha-tYq"/>
+                        <segue destination="OXO-AO-cW6" kind="relationship" relationship="viewControllers" id="Xfe-O5-uCA"/>
+                        <segue destination="2lo-1o-hh0" kind="relationship" relationship="viewControllers" id="DTz-zi-Sa2"/>
+                        <segue destination="NOn-ET-nNO" kind="relationship" relationship="viewControllers" id="p7n-KD-Tzs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdA-Up-map" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="404" y="265"/>
+        </scene>
+        <!--Loja-->
+        <scene sceneID="BF7-F1-0BI">
+            <objects>
+                <viewController id="5ZF-oU-0hb" customClass="LojaViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ul2-Sl-EdU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Iha-kH-rtj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pkK-BH-z3x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="MQJ-lm-uyh">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="MQJ-lm-uyh" secondAttribute="trailing" id="9LD-Kz-fBd"/>
+                            <constraint firstItem="Iha-kH-rtj" firstAttribute="top" secondItem="MQJ-lm-uyh" secondAttribute="bottom" id="Fuz-Iv-W2a"/>
+                            <constraint firstItem="MQJ-lm-uyh" firstAttribute="leading" secondItem="pkK-BH-z3x" secondAttribute="leading" id="PP8-y3-v69"/>
+                            <constraint firstItem="MQJ-lm-uyh" firstAttribute="top" secondItem="pkK-BH-z3x" secondAttribute="top" id="zer-ta-P9I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Loja" id="LOD-yd-nyH">
+                        <barButtonItem key="rightBarButtonItem" image="info" id="ckv-Bg-7Y5"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1C-H1-SiM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1939" y="1245"/>
+        </scene>
+        <!--Meus Livros-->
+        <scene sceneID="7bG-cQ-17g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WWC-4w-mZI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Meus Livros" id="5jv-hE-C6L"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1vn-jO-Jkj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gav-Tu-UYU" kind="relationship" relationship="rootViewController" id="IHI-My-ouY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tgM-Hu-DTw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="-919"/>
+        </scene>
+        <!--Busca-->
+        <scene sceneID="24O-A7-Zeo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OXO-AO-cW6" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Busca" id="ngq-DF-B0q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EqK-gG-1Gj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qgO-RC-RwY" kind="relationship" relationship="rootViewController" id="vxd-3o-da1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gta-md-LwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="-212"/>
+        </scene>
+        <!--Loja-->
+        <scene sceneID="zbN-1y-cnm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NOn-ET-nNO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Loja" id="xby-de-Cht"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6oK-eM-3VH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5ZF-oU-0hb" kind="relationship" relationship="rootViewController" id="Nx2-IG-621"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lV2-84-f10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="1245"/>
+        </scene>
+        <!--Onde encontrar-->
+        <scene sceneID="0ZI-af-1UE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2lo-1o-hh0" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Onde encontrar" id="KuG-Cn-A5A"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kD5-ot-qZc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ltf-wD-JEC" kind="relationship" relationship="rootViewController" id="s39-mj-X0Q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKo-eR-KLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1213" y="495"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info" width="30" height="30"/>
+        <image name="logout" width="30" height="30"/>
+    </resources>
+</document>

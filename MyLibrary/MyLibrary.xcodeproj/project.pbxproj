@@ -25,9 +25,19 @@
 		30AF45D21AFADCF6005F829A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D11AFADCF6005F829A /* StoreKit.framework */; };
 		30AF45D41AFADD03005F829A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D31AFADD03005F829A /* SystemConfiguration.framework */; };
 		30AF45D61AFADD0E005F829A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D51AFADD0E005F829A /* libsqlite3.dylib */; };
+		4AD9AC281AFBCCB000E9B1FE /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */; };
+		4AD9AC291AFBCCB000E9B1FE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */; };
+		4AD9AC2A1AFBCCB000E9B1FE /* LojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */; };
+		4AD9AC2B1AFBCCB000E9B1FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9AC261AFBCCB000E9B1FE /* MapViewController.swift */; };
+		4AD9AC2C1AFBCCB000E9B1FE /* MeusLivrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD9AC271AFBCCB000E9B1FE /* MeusLivrosViewController.swift */; };
+		4AD9AC331AFBCCC400E9B1FE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC2D1AFBCCC400E9B1FE /* Bolts.framework */; };
+		4AD9AC341AFBCCC400E9B1FE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC2E1AFBCCC400E9B1FE /* Parse.framework */; };
+		4AD9AC351AFBCCC400E9B1FE /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC2F1AFBCCC400E9B1FE /* ParseCrashReporting.framework */; };
+		4AD9AC361AFBCCC400E9B1FE /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC301AFBCCC400E9B1FE /* ParseFacebookUtils.framework */; };
+		4AD9AC371AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC311AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework */; };
+		4AD9AC381AFBCCC400E9B1FE /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD9AC321AFBCCC400E9B1FE /* ParseUI.framework */; };
+		4AD9AC3A1AFBCCF100E9B1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AD9AC391AFBCCF100E9B1FE /* Main.storyboard */; };
 		DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */; };
-		DB20636D1AFA9F7100A9BC6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20636C1AFA9F7100A9BC6F /* ViewController.swift */; };
-		DB2063701AFA9F7100A9BC6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20636E1AFA9F7100A9BC6F /* Main.storyboard */; };
 		DB2063721AFA9F7100A9BC6F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB2063711AFA9F7100A9BC6F /* Images.xcassets */; };
 		DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */; };
 		DB2063811AFA9F7100A9BC6F /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */; };
@@ -64,11 +74,21 @@
 		30AF45D11AFADCF6005F829A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		30AF45D31AFADD03005F829A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		30AF45D51AFADD0E005F829A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
+		4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaViewController.swift; sourceTree = "<group>"; };
+		4AD9AC261AFBCCB000E9B1FE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4AD9AC271AFBCCB000E9B1FE /* MeusLivrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeusLivrosViewController.swift; sourceTree = "<group>"; };
+		4AD9AC2D1AFBCCC400E9B1FE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "MyLibrary/parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
+		4AD9AC2E1AFBCCC400E9B1FE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "MyLibrary/parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
+		4AD9AC2F1AFBCCC400E9B1FE /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "MyLibrary/parse-library-1.7.2/ParseCrashReporting.framework"; sourceTree = "<group>"; };
+		4AD9AC301AFBCCC400E9B1FE /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtils.framework; path = "MyLibrary/parse-library-1.7.2/ParseFacebookUtils.framework"; sourceTree = "<group>"; };
+		4AD9AC311AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseFacebookUtilsV4.framework; path = "MyLibrary/parse-library-1.7.2/ParseFacebookUtilsV4.framework"; sourceTree = "<group>"; };
+		4AD9AC321AFBCCC400E9B1FE /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = "MyLibrary/parse-library-1.7.2/ParseUI.framework"; sourceTree = "<group>"; };
+		4AD9AC391AFBCCF100E9B1FE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = MyLibrary/Main.storyboard; sourceTree = "<group>"; };
 		DB2063651AFA9F7100A9BC6F /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2063691AFA9F7100A9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB20636C1AFA9F7100A9BC6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DB20636F1AFA9F7100A9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB2063711AFA9F7100A9BC6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB2063741AFA9F7100A9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DB20637A1AFA9F7100A9BC6F /* MyLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,12 +111,18 @@
 				30AF45C81AFADC7C005F829A /* CoreLocation.framework in Frameworks */,
 				30AF45C61AFADC6F005F829A /* CoreGraphics.framework in Frameworks */,
 				30AF45C41AFADC65005F829A /* CFNetwork.framework in Frameworks */,
+				4AD9AC371AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework in Frameworks */,
 				30AF45C21AFADC59005F829A /* AudioToolbox.framework in Frameworks */,
+				4AD9AC351AFBCCC400E9B1FE /* ParseCrashReporting.framework in Frameworks */,
 				30AF45C01AFADC38005F829A /* ParseUI.framework in Frameworks */,
 				30AF45BC1AFADC38005F829A /* Parse.framework in Frameworks */,
+				4AD9AC361AFBCCC400E9B1FE /* ParseFacebookUtils.framework in Frameworks */,
+				4AD9AC341AFBCCC400E9B1FE /* Parse.framework in Frameworks */,
 				30AF45BD1AFADC38005F829A /* ParseCrashReporting.framework in Frameworks */,
 				30AF45BE1AFADC38005F829A /* ParseFacebookUtils.framework in Frameworks */,
+				4AD9AC331AFBCCC400E9B1FE /* Bolts.framework in Frameworks */,
 				30AF45BB1AFADC38005F829A /* Bolts.framework in Frameworks */,
+				4AD9AC381AFBCCC400E9B1FE /* ParseUI.framework in Frameworks */,
 				30AF45BF1AFADC38005F829A /* ParseFacebookUtilsV4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,8 +140,20 @@
 		DB20635C1AFA9F7100A9BC6F = {
 			isa = PBXGroup;
 			children = (
+				4AD9AC2D1AFBCCC400E9B1FE /* Bolts.framework */,
+				4AD9AC2E1AFBCCC400E9B1FE /* Parse.framework */,
+				4AD9AC2F1AFBCCC400E9B1FE /* ParseCrashReporting.framework */,
+				4AD9AC301AFBCCC400E9B1FE /* ParseFacebookUtils.framework */,
+				4AD9AC311AFBCCC400E9B1FE /* ParseFacebookUtilsV4.framework */,
+				4AD9AC321AFBCCC400E9B1FE /* ParseUI.framework */,
+				4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */,
+				4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */,
+				4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */,
+				4AD9AC261AFBCCB000E9B1FE /* MapViewController.swift */,
+				4AD9AC271AFBCCB000E9B1FE /* MeusLivrosViewController.swift */,
 				30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */,
 				30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */,
+				4AD9AC391AFBCCF100E9B1FE /* Main.storyboard */,
 				DB2063671AFA9F7100A9BC6F /* MyLibrary */,
 				DB20637D1AFA9F7100A9BC6F /* MyLibraryTests */,
 				DB2063661AFA9F7100A9BC6F /* Products */,
@@ -136,8 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */,
-				DB20636C1AFA9F7100A9BC6F /* ViewController.swift */,
-				DB20636E1AFA9F7100A9BC6F /* Main.storyboard */,
 				DB2063711AFA9F7100A9BC6F /* Images.xcassets */,
 				DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */,
 				DB2063681AFA9F7100A9BC6F /* Supporting Files */,
@@ -267,7 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB2063701AFA9F7100A9BC6F /* Main.storyboard in Resources */,
+				4AD9AC3A1AFBCCF100E9B1FE /* Main.storyboard in Resources */,
 				DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */,
 				DB2063721AFA9F7100A9BC6F /* Images.xcassets in Resources */,
 			);
@@ -287,8 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AD9AC291AFBCCB000E9B1FE /* LoginViewController.swift in Sources */,
+				4AD9AC2C1AFBCCB000E9B1FE /* MeusLivrosViewController.swift in Sources */,
+				4AD9AC2B1AFBCCB000E9B1FE /* MapViewController.swift in Sources */,
 				30AF45AA1AFAD8ED005F829A /* NSObject+dummy.m in Sources */,
-				DB20636D1AFA9F7100A9BC6F /* ViewController.swift in Sources */,
+				4AD9AC281AFBCCB000E9B1FE /* BeaconViewController.swift in Sources */,
+				4AD9AC2A1AFBCCB000E9B1FE /* LojaViewController.swift in Sources */,
 				DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,14 +352,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DB20636E1AFA9F7100A9BC6F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB20636F1AFA9F7100A9BC6F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
