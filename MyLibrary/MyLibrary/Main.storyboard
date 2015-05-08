@@ -278,7 +278,6 @@
         <!--Onde encontrar?-->
         <scene sceneID="U2E-Bc-nlE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PJQ-KF-DZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="ltf-wD-JEC" customClass="BeaconViewController" customModule="MyLibrary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9rj-dz-8jF"/>
@@ -287,14 +286,72 @@
                     <view key="view" contentMode="scaleToFill" id="zYS-7F-oqv">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qay-v0-WIO">
+                                <rect key="frame" x="279" y="109" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2f-ev-opk">
+                                <rect key="frame" x="16" y="150" width="568" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="jXh-W9-Pgw"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distance to Book" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l2E-ij-hsu">
+                                <rect key="frame" x="16" y="280" width="133" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVA-Ew-UJf">
+                                <rect key="frame" x="160" y="280" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qg-4p-XgQ">
+                                <rect key="frame" x="275" y="491" width="50" height="30"/>
+                                <state key="normal" title="Rented">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="bookRented:" destination="ltf-wD-JEC" eventType="touchUpInside" id="xcF-iV-mxW"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="l2E-ij-hsu" firstAttribute="leading" secondItem="zYS-7F-oqv" secondAttribute="leadingMargin" id="4Lm-zH-wxT"/>
+                            <constraint firstAttribute="centerX" secondItem="F2f-ev-opk" secondAttribute="centerX" id="6uG-5N-ilA"/>
+                            <constraint firstAttribute="centerX" secondItem="Qay-v0-WIO" secondAttribute="centerX" id="7nk-Bw-rvd"/>
+                            <constraint firstItem="jVA-Ew-UJf" firstAttribute="top" secondItem="F2f-ev-opk" secondAttribute="bottom" constant="30" id="T9Z-g8-aP4"/>
+                            <constraint firstItem="Hf5-9A-Iff" firstAttribute="top" secondItem="8Qg-4p-XgQ" secondAttribute="bottom" constant="30" id="VFH-iD-CdW"/>
+                            <constraint firstItem="F2f-ev-opk" firstAttribute="leading" secondItem="zYS-7F-oqv" secondAttribute="leadingMargin" id="XEY-eE-l2L"/>
+                            <constraint firstItem="F2f-ev-opk" firstAttribute="top" secondItem="Qay-v0-WIO" secondAttribute="bottom" constant="20" id="dBf-Jx-IiI"/>
+                            <constraint firstAttribute="centerX" secondItem="8Qg-4p-XgQ" secondAttribute="centerX" id="day-15-Dw4"/>
+                            <constraint firstItem="l2E-ij-hsu" firstAttribute="top" secondItem="F2f-ev-opk" secondAttribute="bottom" constant="30" id="r6S-GB-O5C"/>
+                            <constraint firstItem="jVA-Ew-UJf" firstAttribute="leading" secondItem="zYS-7F-oqv" secondAttribute="leading" constant="160" id="sv7-Zh-aVs"/>
+                            <constraint firstItem="Qay-v0-WIO" firstAttribute="top" secondItem="9rj-dz-8jF" secondAttribute="bottom" constant="45" id="uwM-zA-9u2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Onde encontrar?" id="8p9-Gb-w1x">
                         <barButtonItem key="rightBarButtonItem" image="info" id="yeA-fY-syM">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="lblDistance" destination="jVA-Ew-UJf" id="oPK-1J-VkO"/>
+                        <outlet property="lbl_BookTittle" destination="Qay-v0-WIO" id="hQf-38-uEL"/>
+                        <outlet property="txt_BookLocation" destination="F2f-ev-opk" id="ec9-Rw-yfz"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PJQ-KF-DZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1939" y="495"/>
         </scene>
@@ -391,7 +448,6 @@
         <!--Navigation Controller-->
         <scene sceneID="24O-A7-Zeo">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gta-md-LwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OXO-AO-cW6" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="searchIcon" id="ngq-DF-B0q">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
@@ -410,6 +466,7 @@
                         <segue destination="qgO-RC-RwY" kind="relationship" relationship="rootViewController" id="vxd-3o-da1"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gta-md-LwA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1213" y="-212"/>
         </scene>
@@ -439,7 +496,6 @@
         <!--Onde encontrar-->
         <scene sceneID="0ZI-af-1UE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gKo-eR-KLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2lo-1o-hh0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Onde encontrar" id="KuG-Cn-A5A"/>
                     <toolbarItems/>
@@ -456,6 +512,7 @@
                         <segue destination="ltf-wD-JEC" kind="relationship" relationship="rootViewController" id="s39-mj-X0Q"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKo-eR-KLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1213" y="495"/>
         </scene>
