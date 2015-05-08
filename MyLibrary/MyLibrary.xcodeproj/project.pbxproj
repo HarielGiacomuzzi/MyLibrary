@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3068412B1AFD327A00A4D68D /* BeaconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306841261AFD327A00A4D68D /* BeaconViewController.swift */; };
+		3068412C1AFD327A00A4D68D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306841271AFD327A00A4D68D /* LoginViewController.swift */; };
+		3068412D1AFD327A00A4D68D /* LojaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306841281AFD327A00A4D68D /* LojaViewController.swift */; };
+		3068412E1AFD327A00A4D68D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306841291AFD327A00A4D68D /* MapViewController.swift */; };
+		3068412F1AFD327A00A4D68D /* MeusLivrosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068412A1AFD327A00A4D68D /* MeusLivrosViewController.swift */; };
 		30AF45AA1AFAD8ED005F829A /* NSObject+dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */; };
 		30AF45BB1AFADC38005F829A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45B51AFADC38005F829A /* Bolts.framework */; };
 		30AF45BC1AFADC38005F829A /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45B61AFADC38005F829A /* Parse.framework */; };
@@ -47,9 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-Bridging-Header.h"; sourceTree = "<group>"; };
-		30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+dummy.h"; sourceTree = "<group>"; };
-		30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+dummy.m"; sourceTree = "<group>"; };
+		306841261AFD327A00A4D68D /* BeaconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeaconViewController.swift; sourceTree = "<group>"; };
+		306841271AFD327A00A4D68D /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		306841281AFD327A00A4D68D /* LojaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaViewController.swift; sourceTree = "<group>"; };
+		306841291AFD327A00A4D68D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3068412A1AFD327A00A4D68D /* MeusLivrosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeusLivrosViewController.swift; sourceTree = "<group>"; };
+		30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyLibrary-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+dummy.h"; path = "../NSObject+dummy.h"; sourceTree = "<group>"; };
+		30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+dummy.m"; path = "../NSObject+dummy.m"; sourceTree = "<group>"; };
 		30AF45B51AFADC38005F829A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1.7.2/Bolts.framework"; sourceTree = "<group>"; };
 		30AF45B61AFADC38005F829A /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1.7.2/Parse.framework"; sourceTree = "<group>"; };
 		30AF45B71AFADC38005F829A /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseCrashReporting.framework; path = "parse-library-1.7.2/ParseCrashReporting.framework"; sourceTree = "<group>"; };
@@ -117,15 +127,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		306841251AFD326500A4D68D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				306841261AFD327A00A4D68D /* BeaconViewController.swift */,
+				306841271AFD327A00A4D68D /* LoginViewController.swift */,
+				306841281AFD327A00A4D68D /* LojaViewController.swift */,
+				306841291AFD327A00A4D68D /* MapViewController.swift */,
+				3068412A1AFD327A00A4D68D /* MeusLivrosViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		DB20635C1AFA9F7100A9BC6F = {
 			isa = PBXGroup;
 			children = (
-				30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */,
-				30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */,
 				DB2063671AFA9F7100A9BC6F /* MyLibrary */,
 				DB20637D1AFA9F7100A9BC6F /* MyLibraryTests */,
 				DB2063661AFA9F7100A9BC6F /* Products */,
-				30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +160,7 @@
 		DB2063671AFA9F7100A9BC6F /* MyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				306841251AFD326500A4D68D /* Controller */,
 				DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */,
 				DB20636C1AFA9F7100A9BC6F /* ViewController.swift */,
 				30AF45DF1AFBEE91005F829A /* SignUpViewController.swift */,
@@ -157,6 +177,9 @@
 		DB2063681AFA9F7100A9BC6F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */,
+				30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */,
+				30AF45A91AFAD8ED005F829A /* NSObject+dummy.m */,
 				30AF45D51AFADD0E005F829A /* libsqlite3.dylib */,
 				30AF45D31AFADD03005F829A /* SystemConfiguration.framework */,
 				30AF45D11AFADCF6005F829A /* StoreKit.framework */,
@@ -298,8 +321,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				30AF45E21AFBFA15005F829A /* BooksViewController.swift in Sources */,
+				3068412F1AFD327A00A4D68D /* MeusLivrosViewController.swift in Sources */,
 				30AF45E41AFD18C3005F829A /* ParseManager.swift in Sources */,
 				30AF45AA1AFAD8ED005F829A /* NSObject+dummy.m in Sources */,
+				3068412E1AFD327A00A4D68D /* MapViewController.swift in Sources */,
+				3068412D1AFD327A00A4D68D /* LojaViewController.swift in Sources */,
+				3068412B1AFD327A00A4D68D /* BeaconViewController.swift in Sources */,
+				3068412C1AFD327A00A4D68D /* LoginViewController.swift in Sources */,
 				DB20636D1AFA9F7100A9BC6F /* ViewController.swift in Sources */,
 				30AF45E01AFBEE91005F829A /* SignUpViewController.swift in Sources */,
 				DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */,
