@@ -29,8 +29,7 @@ class ParseManager: NSObject {
                     for object in objects {
                         var dict = ["name":object.objectForKey("name")!,"geolocation":object.objectForKey("geolocation")!]
                         self.arrayMaster.append(dict)
-                        //println(object.objectForKey("geolocation")!)
-//                        println(arrayLibrary.description)
+                        println(self.arrayMaster.description)
                     }
                 }
             }else {
