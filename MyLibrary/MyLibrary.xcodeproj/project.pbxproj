@@ -25,6 +25,9 @@
 		30AF45D21AFADCF6005F829A /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D11AFADCF6005F829A /* StoreKit.framework */; };
 		30AF45D41AFADD03005F829A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D31AFADD03005F829A /* SystemConfiguration.framework */; };
 		30AF45D61AFADD0E005F829A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 30AF45D51AFADD0E005F829A /* libsqlite3.dylib */; };
+		30AF45E01AFBEE91005F829A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF45DF1AFBEE91005F829A /* SignUpViewController.swift */; };
+		30AF45E21AFBFA15005F829A /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF45E11AFBFA15005F829A /* BooksViewController.swift */; };
+		30AF45E41AFD18C3005F829A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF45E31AFD18C3005F829A /* ParseManager.swift */; };
 		DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */; };
 		DB20636D1AFA9F7100A9BC6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20636C1AFA9F7100A9BC6F /* ViewController.swift */; };
 		DB2063701AFA9F7100A9BC6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB20636E1AFA9F7100A9BC6F /* Main.storyboard */; };
@@ -64,6 +67,9 @@
 		30AF45D11AFADCF6005F829A /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		30AF45D31AFADD03005F829A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		30AF45D51AFADD0E005F829A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		30AF45DF1AFBEE91005F829A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		30AF45E11AFBFA15005F829A /* BooksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		30AF45E31AFD18C3005F829A /* ParseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseManager.swift; sourceTree = "<group>"; };
 		DB2063651AFA9F7100A9BC6F /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2063691AFA9F7100A9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,10 +143,13 @@
 			children = (
 				DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */,
 				DB20636C1AFA9F7100A9BC6F /* ViewController.swift */,
+				30AF45DF1AFBEE91005F829A /* SignUpViewController.swift */,
 				DB20636E1AFA9F7100A9BC6F /* Main.storyboard */,
+				30AF45E11AFBFA15005F829A /* BooksViewController.swift */,
 				DB2063711AFA9F7100A9BC6F /* Images.xcassets */,
 				DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */,
 				DB2063681AFA9F7100A9BC6F /* Supporting Files */,
+				30AF45E31AFD18C3005F829A /* ParseManager.swift */,
 			);
 			path = MyLibrary;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 				TargetAttributes = {
 					DB2063641AFA9F7100A9BC6F = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 7UUT6QRU26;
 					};
 					DB2063791AFA9F7100A9BC6F = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -287,8 +297,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30AF45E21AFBFA15005F829A /* BooksViewController.swift in Sources */,
+				30AF45E41AFD18C3005F829A /* ParseManager.swift in Sources */,
 				30AF45AA1AFAD8ED005F829A /* NSObject+dummy.m in Sources */,
 				DB20636D1AFA9F7100A9BC6F /* ViewController.swift in Sources */,
+				30AF45E01AFBEE91005F829A /* SignUpViewController.swift in Sources */,
 				DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,14 +432,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyLibrary/parse-library-1.7.2",
 					"/Users/leafarmd/Documents/Projects/PushTest-Manha/PushTest",
 				);
 				INFOPLIST_FILE = MyLibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLibrary-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -437,14 +454,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyLibrary/parse-library-1.7.2",
 					"/Users/leafarmd/Documents/Projects/PushTest-Manha/PushTest",
 				);
 				INFOPLIST_FILE = MyLibrary/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MyLibrary-Bridging-Header.h";
 			};
 			name = Release;

@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        var parseMngr = ParseManager()
+        parseMngr.returnAllLibraries()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -20,6 +28,52 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func login(sender: AnyObject) {
+        
+        var username = self.usernameField.text
+        var password = self.passwordField.text
+        
+        var currentUser = PFUser.currentUser()?.username
+        if(currentUser != "") {
+            // do stuff with the user
+            PFUser.logOut()
+        }
+        
+        if(username == "" || password == ""){
+            var alert = UIAlertView(title: "Error", message: "Username or Password is empty", delegate: self, cancelButtonTitle: "ok")
+            alert.show()
+        }else{
+            
+            self.activity.startAnimating()
+            PFUser.logInWithUsernameInBackground(username, password: password, block: { (user, error) ->
+                Void in
+                
+                self.activity.stopAnimating()
+                
+                if(user != nil){
+                    //perform login
+                    self.performSegueWithIdentifier("gotoMain", sender: self)
+                    
+                }else{
+                    
+                    var alert = UIAlertView(title: "Error", message: "\(error)", delegate: self, cancelButtonTitle: "ok")
+                    alert.show()
+                
+                }
+                
+            
+            
+            })
+                
+        }
+        
+    }
+
+    
+    @IBAction func signup(sender: AnyObject) {
+        self.performSegueWithIdentifier("gotoSignup", sender: self)
+
+    }
 
 }
 
