@@ -361,8 +361,8 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="lcd-Pp-M4g"/>
                                                     <exclude reference="Wsk-8a-2iq"/>
+                                                    <exclude reference="lcd-Pp-M4g"/>
                                                     <exclude reference="8fA-u4-kTA"/>
                                                     <exclude reference="Js5-kf-6cl"/>
                                                     <exclude reference="AF2-fe-jri"/>
