@@ -11,8 +11,8 @@ import Parse
 
 class ParseManager: NSObject {
     
-    
-    var arrayMaster = [NSDictionary]()
+    var arrayMaster : [NSDictionary] = []
+//    var arrayMaster = [NSDictionary]()
     
     func returnAllLibraries() -> NSArray{
         var arrayLibrary = [NSDictionary]()
@@ -28,17 +28,24 @@ class ParseManager: NSObject {
                 if let objects = objects as? [PFObject] {
                     for object in objects {
                         var dict = ["name":object.objectForKey("name")!,"geolocation":object.objectForKey("geolocation")!]
-                        self.arrayMaster.append(dict)
-                        println(self.arrayMaster.description)
+                        arrayLibrary.append(dict)
+                        //println(self.arrayMaster.description)
                     }
                 }
             }else {
                 // Log details of the failure
                 println("Error: \(error!)")
             }
+        
+            dispatch_async(dispatch_get_main_queue(),{
+        
+                
+                self.arrayMaster = arrayLibrary
+                println(self.arrayMaster.description)
+            })
         }
-        println(arrayMaster.description)
-        return arrayLibrary
+        println(self.arrayMaster.description)
+        return self.arrayMaster
     }
    
 }
