@@ -43,6 +43,7 @@
 		DB20636B1AFA9F7100A9BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */; };
 		DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */; };
 		DB2063811AFA9F7100A9BC6F /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */; };
+		DB686C7E1AFD40820055C1C1 /* PersonalizedStoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		DB20637A1AFA9F7100A9BC6F /* MyLibraryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLibraryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB20637F1AFA9F7100A9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryTests.swift; sourceTree = "<group>"; };
+		DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalizedStoreCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,28 +143,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4AD9AC3D1AFBD6EB00E9B1FE /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				DB20636A1AFA9F7100A9BC6F /* AppDelegate.swift */,
-				4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */,
-				4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */,
-				4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */,
-				4AD9AC261AFBCCB000E9B1FE /* MapViewController.swift */,
-				4AD9AC271AFBCCB000E9B1FE /* MeusLivrosViewController.swift */,
-				4AD9AC3F1AFBE63B00E9B1FE /* TabBarController.swift */,
-			);
-			name = Controllers;
-			sourceTree = "<group>";
-		};
-		4AD9AC3E1AFBD6F400E9B1FE /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				4AD9AC3B1AFBD6DE00E9B1FE /* MeusLivrosCell.swift */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		DB20635C1AFA9F7100A9BC6F = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +150,7 @@
 				4AD9AC231AFBCCB000E9B1FE /* BeaconViewController.swift */,
 				4AD9AC241AFBCCB000E9B1FE /* LoginViewController.swift */,
 				4AD9AC251AFBCCB000E9B1FE /* LojaViewController.swift */,
+				DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */,
 				4AD9AC261AFBCCB000E9B1FE /* MapViewController.swift */,
 				4AD9AC271AFBCCB000E9B1FE /* MeusLivrosViewController.swift */,
 				30AF45A81AFAD8ED005F829A /* NSObject+dummy.h */,
@@ -366,6 +347,7 @@
 				4AD9AC2C1AFBCCB000E9B1FE /* MeusLivrosViewController.swift in Sources */,
 				4AD9AC401AFBE63B00E9B1FE /* TabBarController.swift in Sources */,
 				4AD9AC2B1AFBCCB000E9B1FE /* MapViewController.swift in Sources */,
+				DB686C7E1AFD40820055C1C1 /* PersonalizedStoreCell.swift in Sources */,
 				30AF45AA1AFAD8ED005F829A /* NSObject+dummy.m in Sources */,
 				4AD9AC281AFBCCB000E9B1FE /* BeaconViewController.swift in Sources */,
 				4AD9AC2A1AFBCCB000E9B1FE /* LojaViewController.swift in Sources */,
