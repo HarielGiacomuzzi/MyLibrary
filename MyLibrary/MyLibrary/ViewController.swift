@@ -18,8 +18,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         var parseMngr = ParseManager()
-        parseMngr.returnAllLibraries()
+        var arrayBooks = [NSDictionary]()
+        //println(parseMngr.returnBookByLibrary("7nm4Ed3Hct").description)
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            arrayBooks = parseMngr.returnBooksByLibrary("7nm4Ed3Hct") as! [(NSDictionary)]
+            
+             dispatch_async(dispatch_get_main_queue()) {
+            println(arrayBooks.description)
+            }
+        }
+        //println(parseMngr.returnAllBooks().description)
+
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
