@@ -12,8 +12,8 @@ class MeusLivrosViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
+        var parseMngr = ParseManager()
+        parseMngr.bookGetReserve("SuzNSUG5En")
         // Do any additional setup after loading the view, typically from a nib.
     }
     

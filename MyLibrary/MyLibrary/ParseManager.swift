@@ -14,7 +14,7 @@ import Parse
 class ParseManager: NSObject {
     
     //retorna todas as bibliotecas
-    //para converver o objeto geolocation basta instanciar com var location = object.objectForKey("geolocation")! as! PFlocation
+    //para converter o objeto geolocation basta instanciar com var location = object.objectForKey("geolocation")! as! PFlocation
     func returnAllLibraries() -> NSArray{
         var arrayLibrary = [NSDictionary]()
         var query = PFQuery(className:"Library")
@@ -77,6 +77,7 @@ class ParseManager: NSObject {
         if(currentUser != ""){
             if let object = query.getObjectWithId(bookId){
                 object["reserved"]  = "y"
+                self.addAlarm(object)
                 object["userid"] = PFUser.currentUser()?.objectId
                 object.save()
             }
@@ -95,6 +96,20 @@ class ParseManager: NSObject {
             }
         }
     }
+    
+    func addAlarm(object: PFObject){
+        let notification = UILocalNotification()
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        notification.timeZone = NSTimeZone.localTimeZone()
+        notification.fireDate = NSDate().dateByAddingTimeInterval(10)
+        notification.alertBody = "Devolver o livro " + (object.objectForKey("title")! as! String)
+        notification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        notification.hasAction = true
+        notification.alertAction = "View"
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+
     
     
    
