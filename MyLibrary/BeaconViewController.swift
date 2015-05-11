@@ -62,10 +62,6 @@ class BeaconViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
     
-    func locationManager(manager: CLLocationManager!, didStartMonitoringForRegion region: CLRegion!) {
-        locationManager.startRangingBeaconsInRegion(region as! CLBeaconRegion)
-    }
-    
     func locationManager(manager: CLLocationManager!, didExitRegion region: CLRegion!) {
         locationManager.stopRangingBeaconsInRegion(region as! CLBeaconRegion)
     }
