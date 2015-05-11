@@ -9,8 +9,12 @@
 import UIKit
 import Parse
 
+//esta classe retorna os dados do parse, cada metodo retorna um array de dictionary
+
 class ParseManager: NSObject {
     
+    //retorna todas as bibliotecas
+    //para converver o objeto geolocation basta instanciar com var location = object.objectForKey("geolocation")! as! PFlocation
     func returnAllLibraries() -> NSArray{
         var arrayLibrary = [NSDictionary]()
         var query = PFQuery(className:"Library")
@@ -30,7 +34,7 @@ class ParseManager: NSObject {
         //query.whereKey("libraryid", equalTo:"zbMH2yPEYR")
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -43,7 +47,7 @@ class ParseManager: NSObject {
         query.whereKey("libraryid", equalTo:libraryid)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -57,7 +61,7 @@ class ParseManager: NSObject {
         query.whereKey("userid", equalTo:user!)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
