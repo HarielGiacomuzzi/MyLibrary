@@ -34,9 +34,9 @@
 		30AF45E41AFD18C3005F829A /* ParseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AF45E31AFD18C3005F829A /* ParseManager.swift */; };
 		DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */; };
 		DB2063811AFA9F7100A9BC6F /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */; };
+		DBAE9BC01B0136F900522F97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBAE9BBF1B0136F900522F97 /* Images.xcassets */; };
 		DBF1696C1B011B930058E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF1696A1B011B930058E5C9 /* AppDelegate.swift */; };
 		DBF1696D1B011B930058E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF1696B1B011B930058E5C9 /* Main.storyboard */; };
-		DBF1696F1B01242A0058E5C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF1696E1B01242A0058E5C9 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,9 +83,9 @@
 		DB20637F1AFA9F7100A9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLibraryTests.swift; sourceTree = "<group>"; };
 		DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalizedStoreCell.swift; path = ../PersonalizedStoreCell.swift; sourceTree = "<group>"; };
+		DBAE9BBF1B0136F900522F97 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyLibrary/Images.xcassets; sourceTree = "<group>"; };
 		DBF1696A1B011B930058E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF1696B1B011B930058E5C9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		DBF1696E1B01242A0058E5C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +138,7 @@
 		DB20635C1AFA9F7100A9BC6F = {
 			isa = PBXGroup;
 			children = (
+				DBAE9BBF1B0136F900522F97 /* Images.xcassets */,
 				DB29C8691AFBDA8200FEDFFF /* Frameworks */,
 				DB2063671AFA9F7100A9BC6F /* MyLibrary */,
 				DB20637D1AFA9F7100A9BC6F /* MyLibraryTests */,
@@ -174,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */,
-				DBF1696E1B01242A0058E5C9 /* Images.xcassets */,
 				DB2063691AFA9F7100A9BC6F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -307,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBF1696F1B01242A0058E5C9 /* Images.xcassets in Resources */,
+				DBAE9BC01B0136F900522F97 /* Images.xcassets in Resources */,
 				DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */,
 				DBF1696D1B011B930058E5C9 /* Main.storyboard in Resources */,
 			);
