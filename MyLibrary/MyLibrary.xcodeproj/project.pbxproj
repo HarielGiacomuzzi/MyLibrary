@@ -36,6 +36,7 @@
 		DB2063811AFA9F7100A9BC6F /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */; };
 		DBF1696C1B011B930058E5C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF1696A1B011B930058E5C9 /* AppDelegate.swift */; };
 		DBF1696D1B011B930058E5C9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBF1696B1B011B930058E5C9 /* Main.storyboard */; };
+		DBF1696F1B01242A0058E5C9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBF1696E1B01242A0058E5C9 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalizedStoreCell.swift; path = ../PersonalizedStoreCell.swift; sourceTree = "<group>"; };
 		DBF1696A1B011B930058E5C9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBF1696B1B011B930058E5C9 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DBF1696E1B01242A0058E5C9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				30AF45A71AFAD8ED005F829A /* MyLibrary-Bridging-Header.h */,
+				DBF1696E1B01242A0058E5C9 /* Images.xcassets */,
 				DB2063691AFA9F7100A9BC6F /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -303,6 +306,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF1696F1B01242A0058E5C9 /* Images.xcassets in Resources */,
 				DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */,
 				DBF1696D1B011B930058E5C9 /* Main.storyboard in Resources */,
 			);
