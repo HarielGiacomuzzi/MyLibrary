@@ -68,7 +68,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
         
         if let location = locations.last as? CLLocation {
             mapView.setCenterCoordinate(location.coordinate, animated: true)
-            mapView.camera.altitude = pow(2, 11)
+            mapView.camera.altitude = pow(2, 11)ls
+            
+            mapView.camera.centerCoordinate = mapView.regionThatFits(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 500.0, longitudeDelta: 500.0))).center;
         }
     }
     
@@ -84,16 +86,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
             var pin = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
             
             if pin == nil {
-                
-                //				pin = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-                //				(pin as! MKPinAnnotationView).pinColor = MKPinAnnotationColor.Purple
-                //				(pin as! MKPinAnnotationView).animatesDrop = true
-                
                 pin = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 pin.image = UIImage(named: "red_pin")
                 pin.centerOffset = CGPointMake(0, -10)
                 pin.canShowCallout = true
-                
                 
                 // Callout
                 var button = UIButton.buttonWithType(.DetailDisclosure) as! UIButton
@@ -117,7 +113,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
     func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
         
         if control is UIButton {
-            var alert = UIAlertController(title: "Nice Restaurant", message: "Welcome!", preferredStyle: UIAlertControllerStyle.Alert)
+            var alert = UIAlertController(title: "Biblioteca", message: "Welcome!", preferredStyle: UIAlertControllerStyle.Alert)
             var action = UIAlertAction(title: "Thanks", style: UIAlertActionStyle.Cancel, handler: nil)
             
             alert.addAction(action)
