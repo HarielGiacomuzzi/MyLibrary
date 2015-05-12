@@ -65,7 +65,7 @@ class ParseManager: NSObject {
         query.whereKey("libraryid", equalTo:bookName)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -82,7 +82,7 @@ class ParseManager: NSObject {
         //query.whereKey("libraryid", equalTo:"zbMH2yPEYR")
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -95,7 +95,7 @@ class ParseManager: NSObject {
         query.whereKey("libraryid", equalTo:libraryid)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -109,7 +109,7 @@ class ParseManager: NSObject {
         query.whereKey("userid", equalTo:user!)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
