@@ -27,6 +27,51 @@ class ParseManager: NSObject {
         return arrayLibrary
     }
     
+    func returnLibrary(libraryid: String) -> NSArray{
+        var arrayLibrary = [NSDictionary]()
+        var query = PFQuery(className:"Library")
+        query.getObjectWithId(libraryid)
+        var objects = query.findObjects()!
+        for object in objects{
+            var dict = ["id":object.objectId!!, "name":object.objectForKey("name")!, "geolocation":object.objectForKey("geolocation")!]
+            arrayLibrary.append(dict)
+        }
+        
+        return arrayLibrary
+        
+    }
+    
+    func returnLibraryName(libraryid: String) -> String{
+        var libraryName = String()
+        var query = PFQuery(className:"Library")
+        query.getObjectWithId(libraryid)
+        var objects = query.findObjects()!
+        for object in objects{
+            libraryName = object.objectForKey("name")! as! String
+        }
+        
+        return libraryName
+        
+    }
+    
+    
+    
+    func retutnBookByName(bookName: String) -> NSArray{
+        var arrayBooks = [NSDictionary]()
+        var query = PFQuery(className:"Book")
+        query.whereKey("libraryid", equalTo:bookName)
+        var objects = query.findObjects()!
+        for object in objects{
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            arrayBooks.append(dict)
+        }
+        return arrayBooks
+        
+        
+    }
+    
+    
+    
     //retorna todos os livros
     func returnAllBooks() -> NSArray{
         var arrayBooks = [NSDictionary]()
@@ -61,13 +106,13 @@ class ParseManager: NSObject {
         query.whereKey("userid", equalTo:user!)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!, "datereserved":object.objectForKey("datereserved")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
         
     }
-
+    
     
     //reserva livro por usuario
     func bookGetReserve(bookId: String){
@@ -79,6 +124,8 @@ class ParseManager: NSObject {
                 object["reserved"]  = "y"
                 self.addAlarm(object)
                 object["userid"] = PFUser.currentUser()?.objectId
+                object["datereserved"] = NSDate().dateByAddingTimeInterval(3600*12)
+                self.addAlarm(object)
                 object.save()
             }
         }
@@ -112,5 +159,4 @@ class ParseManager: NSObject {
 
     
     
-   
 }

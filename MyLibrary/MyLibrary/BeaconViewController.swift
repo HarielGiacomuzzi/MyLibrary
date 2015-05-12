@@ -16,6 +16,7 @@ class BeaconViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var lbl_BookTittle: UILabel!
     @IBOutlet weak var txt_BookLocation: UITextView!
     @IBOutlet weak var lblDistance: UILabel!
+    @IBOutlet weak var bibliotecaNome: UILabel!
     
     //MARK: UsefullVariables
     var bookTittle : String?
