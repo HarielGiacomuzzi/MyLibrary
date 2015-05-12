@@ -68,7 +68,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
         
         if let location = locations.last as? CLLocation {
             mapView.setCenterCoordinate(location.coordinate, animated: true)
-            mapView.camera.altitude = pow(2, 11)ls
+            mapView.camera.altitude = pow(2, 11)
             
             mapView.camera.centerCoordinate = mapView.regionThatFits(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 500.0, longitudeDelta: 500.0))).center;
         }
@@ -120,5 +120,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
+    }
+    
+    @IBAction func mapInfo(sender: AnyObject) {
+        var infoAlert = UIAlertController(title: "Info", message: "Descubra as bibliotecas mais próximas de você e navegue por seus acervos", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        infoAlert.addAction(UIAlertAction(title: "Entendi", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        self.presentViewController(infoAlert, animated: true, completion: nil)
     }
 }
