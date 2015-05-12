@@ -14,6 +14,10 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
     //MARK:Variables
     var removeAdsProduct : SKProduct?
     var productsRequest : SKProductsRequest?
+    let comprasArray = ["Remover ads", "Conta Premium"]
+    let precosArray = ["US$ 0.99", "US$ 1.99"]
+    @IBOutlet weak var comprasTableView: UITableView!
+    
     
     //MARK:Main Methods
     override func viewDidLoad() {
@@ -34,6 +38,31 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
         productsRequest?.start()
     }
     
+    func tableView(tableView: UITableView,
+        numberOfRowsInSection section: Int) -> Int {
+            return comprasArray.count
+    }
+    
+    func tableView(tableView: UITableView,
+        cellForRowAtIndexPath
+        indexPath: NSIndexPath) -> LojaTableViewCell {
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("lojaCell") as! LojaTableViewCell
+            
+            cell.compraLabel.text = comprasArray[indexPath.row]
+            cell.precoLabel.text = precosArray[indexPath.row]
+            
+            return cell
+    }
+    
+    @IBAction func lojaInfo(sender: AnyObject) {
+        var infoAlert = UIAlertController(title: "Info", message: "Encontre aqui os upgrades para o app", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        infoAlert.addAction(UIAlertAction(title: "Entendi", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        self.presentViewController(infoAlert, animated: true, completion: nil)
+    }
     
     //MARK:TransactionsControl
     func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
@@ -106,7 +135,4 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
         }
 
     }
-    
-    
 }
-

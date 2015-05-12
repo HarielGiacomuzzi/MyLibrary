@@ -121,4 +121,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
         }
         
     }
+    
+    @IBAction func mapInfo(sender: AnyObject) {
+        var infoAlert = UIAlertController(title: "Info", message: "Descubra as bibliotecas mais próximas de você e navegue por seus acervos", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        infoAlert.addAction(UIAlertAction(title: "Entendi", style: .Default, handler: { (action: UIAlertAction!) in
+        }))
+        
+        self.presentViewController(infoAlert, animated: true, completion: nil)
+    }
 }
