@@ -9,7 +9,7 @@
 import UIKit
 import StoreKit
 
-class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+class LojaViewController: UIViewController,UITableViewDataSource,UITableViewDelegate , SKProductsRequestDelegate, SKPaymentTransactionObserver {
     
     //MARK:Variables
     var removeAdsProduct : SKProduct?
@@ -43,16 +43,13 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
             return comprasArray.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> LojaTableViewCell {
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("lojaCell") as! LojaTableViewCell
-            
-            cell.compraLabel.text = comprasArray[indexPath.row]
-            cell.precoLabel.text = precosArray[indexPath.row]
-            
-            return cell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("lojaCell") as! LojaTableViewCell
+        
+        cell.compraLabel.text = comprasArray[indexPath.row]
+        cell.precoLabel.text = precosArray[indexPath.row]
+        
+        return cell
     }
     
     @IBAction func lojaInfo(sender: AnyObject) {
@@ -64,6 +61,27 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
         self.presentViewController(infoAlert, animated: true, completion: nil)
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(SKPaymentQueue.canMakePayments()){
+            var infoAlert = UIAlertController(title: "Info", message: "Thank you for purchasing", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            infoAlert.addAction(UIAlertAction(title: "got it !", style: .Default, handler: { (action: UIAlertAction!) in
+            }))
+            
+            self.presentViewController(infoAlert, animated: true, completion: nil)
+            //let payment:SKPayment = SKPayment(product: removeAdsProduct)
+            //SKPaymentQueue.defaultQueue().addPayment(payment)
+        }else{
+            var infoAlert = UIAlertController(title: "Info", message: "Sorry But you can't do purchases.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            infoAlert.addAction(UIAlertAction(title: "got it !", style: .Default, handler: { (action: UIAlertAction!) in
+            }))
+            
+            self.presentViewController(infoAlert, animated: true, completion: nil)
+        }
+        
+    }
+    
     //MARK:TransactionsControl
     func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
         for transaction:AnyObject in transactions {
@@ -73,15 +91,16 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
             println("Purchasing Product");
         break;
         case .Failed:
+            self.failedTransaction(trans)
             println("Purchase Failed");
         break;
         case .Restored:
+            self.restoreTransaction(trans)
             println("Product Restored");
         break;
         case .Purchased:
                 self.completeTransactions(trans);
                 println("Product Purchased");
-        SKPaymentQueue.defaultQueue().finishTransaction(transaction as! SKPaymentTransaction)
         break;
         default:
             break;
@@ -94,16 +113,34 @@ class LojaViewController: UIViewController, SKProductsRequestDelegate, SKPayment
                 self.finishTransaction(true, transaction: transaction);
     }
     
+    func restoreTransaction(transaction: SKPaymentTransaction){
+        self.provideContent(transaction.originalTransaction.payment.productIdentifier)
+        self.finishTransaction(true, transaction: transaction)
+    }
+    
     func provideContent(productId : String){
         if (productId == removeAdsProduct?.productIdentifier)
         {
             println("Ads Removed");
             var infoAlert = UIAlertController(title: "Info", message: "Ads Removed", preferredStyle: UIAlertControllerStyle.Alert)
             
-            infoAlert.addAction(UIAlertAction(title: "Entendi", style: .Default, handler: { (action: UIAlertAction!) in
+            infoAlert.addAction(UIAlertAction(title: "Got it !", style: .Default, handler: { (action: UIAlertAction!) in
             }))
             
             self.presentViewController(infoAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func failedTransaction(transaction: SKPaymentTransaction){
+        if (transaction.error.code != SKErrorPaymentCancelled)
+        {
+            // error!
+            self.finishTransaction(false, transaction: transaction)
+        }
+        else
+        {
+            // this is fine, the user just cancelled, so don’t notify
+            SKPaymentQueue.defaultQueue().finishTransaction(transaction)
         }
     }
     
