@@ -15,6 +15,9 @@ class ParseManager: NSObject {
     
     //retorna todas as bibliotecas
     //para converver o objeto geolocation basta instanciar com var location = object.objectForKey("geolocation")! as! PFlocation
+    
+    
+    
     func returnAllLibraries() -> NSArray{
         var arrayLibrary = [NSDictionary]()
         var query = PFQuery(className:"Library")
@@ -26,6 +29,51 @@ class ParseManager: NSObject {
         }
         return arrayLibrary
     }
+    
+    func returnLibrary(libraryid: String) -> NSArray{
+        var arrayLibrary = [NSDictionary]()
+        var query = PFQuery(className:"Library")
+        query.getObjectWithId(libraryid)
+        var objects = query.findObjects()!
+        for object in objects{
+            var dict = ["id":object.objectId!!, "name":object.objectForKey("name")!, "geolocation":object.objectForKey("geolocation")!]
+            arrayLibrary.append(dict)
+        }
+        
+        return arrayLibrary
+        
+    }
+    
+    func returnLibraryName(libraryid: String) -> String{
+        var libraryName = String()
+        var query = PFQuery(className:"Library")
+        query.getObjectWithId(libraryid)
+        var objects = query.findObjects()!
+        for object in objects{
+            libraryName = object.objectForKey("name")! as! String
+        }
+        
+        return libraryName
+        
+    }
+    
+    
+    
+    func retutnBookByName(bookName: String) -> NSArray{
+        var arrayBooks = [NSDictionary]()
+        var query = PFQuery(className:"Book")
+        query.whereKey("libraryid", equalTo:bookName)
+        var objects = query.findObjects()!
+        for object in objects{
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            arrayBooks.append(dict)
+        }
+        return arrayBooks
+        
+        
+    }
+    
+    
     
     //retorna todos os livros
     func returnAllBooks() -> NSArray{
@@ -61,13 +109,13 @@ class ParseManager: NSObject {
         query.whereKey("userid", equalTo:user!)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!, "datereserved":object.objectForKey("datereserved")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
         
     }
-
+    
     
     //reserva livro por usuario
     func bookGetReserve(bookId: String){
@@ -78,6 +126,8 @@ class ParseManager: NSObject {
             if let object = query.getObjectWithId(bookId){
                 object["reserved"]  = "y"
                 object["userid"] = PFUser.currentUser()?.objectId
+                object["datereserved"] = NSDate().dateByAddingTimeInterval(3600*12)
+                self.addAlarm(object)
                 object.save()
             }
         }
@@ -96,6 +146,46 @@ class ParseManager: NSObject {
         }
     }
     
+    func renewBook(bookId: String){
+        var arrayBooks = [NSDictionary]()
+        var query = PFQuery(className:"Book")
+        var currentUser = PFUser.currentUser()?.username
+        if(currentUser != ""){
+            if let object = query.getObjectWithId(bookId){
+                object["reserved"]  = "y"
+                object["userid"] = PFUser.currentUser()?.objectId
+                object["datereserved"] = NSDate().dateByAddingTimeInterval(3600*12*5)
+                self.removeAlarm(object["title"]! as! String)
+                self.addAlarm(object)
+                object.save()
+            }
+        }
+    }
     
-   
+    func addAlarm(object: PFObject){
+        let notification = UILocalNotification()
+        let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+        notification.timeZone = NSTimeZone.localTimeZone()
+        notification.fireDate = NSDate().dateByAddingTimeInterval(3600*12)
+        notification.alertBody = "Devolver o livro " + (object.objectForKey("title")! as! String)
+        notification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
+        notification.hasAction = true
+        notification.alertAction = "View"
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        
+        
+    }
+    
+    func removeAlarm(bookName: String){
+        var notifications = UIApplication.sharedApplication().scheduledLocalNotifications
+        var name = "Devolver o livro " + bookName
+        for notification in notifications{
+            if (notification.alertBody == name){
+                UIApplication.sharedApplication().cancelLocalNotification(notification as! UILocalNotification)
+            }
+        }
+    }
+    
+    
 }

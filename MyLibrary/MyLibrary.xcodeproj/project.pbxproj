@@ -35,8 +35,6 @@
 		4ACC04C11B013B1D00D363C4 /* MeusLivrosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC04C01B013B1D00D363C4 /* MeusLivrosTableViewCell.swift */; };
 		4ACC04C31B025CFC00D363C4 /* LojaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC04C21B025CFC00D363C4 /* LojaTableViewCell.swift */; };
 		4ACC04C71B0260FD00D363C4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC04C61B0260FD00D363C4 /* TabBarViewController.swift */; };
-		4ACC04C91B0269B500D363C4 /* BibliotecaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC04C81B0269B500D363C4 /* BibliotecaViewController.swift */; };
-		4ACC04CB1B026AFD00D363C4 /* BibliotecaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACC04CA1B026AFD00D363C4 /* BibliotecaTableViewCell.swift */; };
 		DB2063751AFA9F7100A9BC6F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */; };
 		DB2063811AFA9F7100A9BC6F /* MyLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2063801AFA9F7100A9BC6F /* MyLibraryTests.swift */; };
 		DBAE9BC01B0136F900522F97 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBAE9BBF1B0136F900522F97 /* Images.xcassets */; };
@@ -84,8 +82,6 @@
 		4ACC04C01B013B1D00D363C4 /* MeusLivrosTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeusLivrosTableViewCell.swift; sourceTree = "<group>"; };
 		4ACC04C21B025CFC00D363C4 /* LojaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LojaTableViewCell.swift; sourceTree = "<group>"; };
 		4ACC04C61B0260FD00D363C4 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ../TabBarViewController.swift; sourceTree = "<group>"; };
-		4ACC04C81B0269B500D363C4 /* BibliotecaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibliotecaViewController.swift; sourceTree = "<group>"; };
-		4ACC04CA1B026AFD00D363C4 /* BibliotecaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibliotecaTableViewCell.swift; sourceTree = "<group>"; };
 		DB2063651AFA9F7100A9BC6F /* MyLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB2063691AFA9F7100A9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB2063741AFA9F7100A9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -141,7 +137,6 @@
 				306841281AFD327A00A4D68D /* LojaViewController.swift */,
 				306841291AFD327A00A4D68D /* MapViewController.swift */,
 				3068412A1AFD327A00A4D68D /* MeusLivrosViewController.swift */,
-				4ACC04C81B0269B500D363C4 /* BibliotecaViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,7 +173,6 @@
 				DB686C7D1AFD40820055C1C1 /* PersonalizedStoreCell.swift */,
 				4ACC04C01B013B1D00D363C4 /* MeusLivrosTableViewCell.swift */,
 				4ACC04C21B025CFC00D363C4 /* LojaTableViewCell.swift */,
-				4ACC04CA1B026AFD00D363C4 /* BibliotecaTableViewCell.swift */,
 				DB2063731AFA9F7100A9BC6F /* LaunchScreen.xib */,
 				DB2063681AFA9F7100A9BC6F /* Supporting Files */,
 				30AF45E31AFD18C3005F829A /* ParseManager.swift */,
@@ -343,7 +337,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30AF45E21AFBFA15005F829A /* BooksViewController.swift in Sources */,
-				4ACC04CB1B026AFD00D363C4 /* BibliotecaTableViewCell.swift in Sources */,
 				3068412F1AFD327A00A4D68D /* MeusLivrosViewController.swift in Sources */,
 				4ACC04C11B013B1D00D363C4 /* MeusLivrosTableViewCell.swift in Sources */,
 				30AF45E41AFD18C3005F829A /* ParseManager.swift in Sources */,
@@ -353,7 +346,6 @@
 				3068412D1AFD327A00A4D68D /* LojaViewController.swift in Sources */,
 				4ACC04C31B025CFC00D363C4 /* LojaTableViewCell.swift in Sources */,
 				3068412B1AFD327A00A4D68D /* BeaconViewController.swift in Sources */,
-				4ACC04C91B0269B500D363C4 /* BibliotecaViewController.swift in Sources */,
 				3068412C1AFD327A00A4D68D /* LoginViewController.swift in Sources */,
 				30AF45E01AFBEE91005F829A /* SignUpViewController.swift in Sources */,
 			);

@@ -15,10 +15,6 @@ class MeusLivrosViewController: UIViewController {
     
     @IBOutlet weak var meusLivrosTableView: UITableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewWillAppear(animated: Bool) {
         self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
     }
@@ -35,26 +31,58 @@ class MeusLivrosViewController: UIViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("meusLivrosCell") as! MeusLivrosTableViewCell
             
             cell.nomeLabel.text = arrayBooks[indexPath.row].objectForKey("title") as? String
-            cell.bibliotecaLabel.text = arrayBooks[indexPath.row].objectForKey("libraryid") as? String
+            //cell.bibliotecaLabel.text = arrayBooks[indexPath.row].objectForKey("libraryid") as? String
             
-            println(arrayBooks[indexPath.row].objectForKey("title") as? String)
+            cell.bibliotecaLabel.text = parseMngr.returnLibraryName((arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!)
+            let userImageFile = arrayBooks[indexPath.row].objectForKey("bookCover") as! PFFile
+            cell.imageView?.image = UIImage(data: userImageFile.getData()!)
             
+            println("livraria",parseMngr.returnLibrary((arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!))
             
+            var dateFormatter: NSDateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd/MM"
+            dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
             
-//*** Transforma os PFFile em UIImage e põe na célula ***
-//            let imageFile : PFFile = arrayBooks[indexPath.row].objectForKey("cover") as! PFFile
-//            imageFile.getDataInBackgroundWithBlock ({ (imageData: NSData?, error : NSError?) -> Void in
-//                if (error == nil) {
-//                    let imageLoaded = UIImage(data:imageData!)
-//                    //                    println(imageLoaded)
-//                    cell.capaImageView.image = imageLoaded
-//                }
-//                }, progressBlock: {
-//                    (percentDone: CInt) -> Void in
-//                }
-//            )
-            
+            cell.dataLabel.text = dateFormatter.stringFromDate((arrayBooks[indexPath.row].objectForKey("datereserved") as? NSDate)!)
             return cell
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            
+            // self.removeCloudKit(dataSource.objectAtIndex(indexPath.row) as! CKRecord, itemIndex: indexPath)
+            //            self.parseMngr.bookGetBack((arrayBooks[indexPath.row].objectForKey("id") as? String)!)
+            //            self.arrayBooks.removeAtIndex(indexPath.row)
+            //            self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            //           self.meusLivrosTableView.reloadData()
+            
+        }
+    }
+    
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
+        var button1 = UITableViewRowAction(style: .Default, title: "Devolver!", handler: { (action, indexPath) in
+            self.parseMngr.bookGetBack((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
+            self.arrayBooks.removeAtIndex(indexPath.row)
+            self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            self.meusLivrosTableView.reloadData()
+        })
+        button1.backgroundColor = UIColor.blueColor()
+        
+        var button2 = UITableViewRowAction(style: .Default, title: "Renovar!", handler: { (action, indexPath) in
+            self.parseMngr.renewBook((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
+            var date = NSDate().dateByAddingTimeInterval(3600*12*5)
+            self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
+            self.meusLivrosTableView.reloadData()
+        })
+        button2.backgroundColor = UIColor.orangeColor()
+        
+        
+        return [button1,button2]
+    }
+    
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
     }
 
     @IBAction func logoutPressed(sender: AnyObject) {
