@@ -59,13 +59,13 @@ class ParseManager: NSObject {
     
     
     
-    func retutnBookByName(bookName: String) -> NSArray{
+    func returnBookByName(bookName: String) -> NSArray{
         var arrayBooks = [NSDictionary]()
         var query = PFQuery(className:"Book")
         query.whereKey("libraryid", equalTo:bookName)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"datereserved":object.objectForKey("datereserved")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -82,7 +82,7 @@ class ParseManager: NSObject {
         //query.whereKey("libraryid", equalTo:"zbMH2yPEYR")
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"datereserved":object.objectForKey("datereserved")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -95,7 +95,7 @@ class ParseManager: NSObject {
         query.whereKey("libraryid", equalTo:libraryid)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -109,7 +109,7 @@ class ParseManager: NSObject {
         query.whereKey("userid", equalTo:user!)
         var objects = query.findObjects()!
         for object in objects{
-            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "name":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
+            var dict = ["id":object.objectId!!,"bookCover":object.objectForKey("cover")! as! PFFile, "title":object.objectForKey("title")!, "reserved":object.objectForKey("reserved")!, "libraryid":object.objectForKey("libraryid")!,"datereserved":object.objectForKey("datereserved")!,"majorid":object.objectForKey("majorid")!,"minor":object.objectForKey("minorid")!,"beaconuuid":object.objectForKey("beaconuuid")!,"beaconidentifier":object.objectForKey("beaconidentifier")!]
             arrayBooks.append(dict)
         }
         return arrayBooks
@@ -142,6 +142,8 @@ class ParseManager: NSObject {
             if let object = query.getObjectWithId(bookId){
                 object["reserved"]  = "n"
                 object["userid"] = ""
+                self.removeAlarm(object["title"]! as! String)
+                //object["datereserved"] = ""
                 object.save()
             }
         }
@@ -169,7 +171,7 @@ class ParseManager: NSObject {
         let settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge, categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         notification.timeZone = NSTimeZone.localTimeZone()
-        notification.fireDate = NSDate().dateByAddingTimeInterval(3600*24*5)
+        notification.fireDate = NSDate().dateByAddingTimeInterval(10)
         notification.alertBody = "Devolver o livro " + (object.objectForKey("title")! as! String)
         notification.applicationIconBadgeNumber = UIApplication.sharedApplication().applicationIconBadgeNumber + 1
         notification.hasAction = true

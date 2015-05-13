@@ -68,7 +68,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate , MKMapView
         
         if let location = locations.last as? CLLocation {
             mapView.setCenterCoordinate(location.coordinate, animated: true)
-            mapView.camera.altitude = pow(2, 11)
+            mapView.camera.altitude = pow(2.0, 11.0)
             
             mapView.camera.centerCoordinate = mapView.regionThatFits(MKCoordinateRegion(center: location.coordinate, span: MKCoordinateSpan(latitudeDelta: 500.0, longitudeDelta: 500.0))).center;
         }

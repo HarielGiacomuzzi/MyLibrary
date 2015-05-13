@@ -16,7 +16,15 @@ class MeusLivrosViewController: UIViewController {
     @IBOutlet weak var meusLivrosTableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
+        
         self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        self.parseMngr.bookGetReserve("J0Oziyiz40")
+//        self.parseMngr.bookGetReserve("aHRQPmMXHt")
+//        self.parseMngr.bookGetReserve("SuzNSUG5En")
     }
     
     func tableView(tableView: UITableView,
@@ -46,6 +54,7 @@ class MeusLivrosViewController: UIViewController {
             cell.dataLabel.text = dateFormatter.stringFromDate((arrayBooks[indexPath.row].objectForKey("datereserved") as? NSDate)!)
             return cell
     }
+
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
