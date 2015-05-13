@@ -7,21 +7,21 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>3FC06410-2724-43CA-BE7D-A6F5625B382C</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MyLibrary</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>72A70E691807175BFC881F1C7C16AEB85D19C95B</key>
-		<string>https://github.com/HarielGiacomuzzi/MyLibrary</string>
+		<string>https://github.com/HarielGiacomuzzi/MyLibrary.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MyLibrary/MyLibrary.xcodeproj/project.xcworkspace</string>
+	<string>MyLibrary/MyLibrary.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>72A70E691807175BFC881F1C7C16AEB85D19C95B</key>
 		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/HarielGiacomuzzi/MyLibrary</string>
+	<string>https://github.com/HarielGiacomuzzi/MyLibrary.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>72A70E691807175BFC881F1C7C16AEB85D19C95B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>MyLibrary</string>
+			<string>MyLibrary%202</string>
 		</dict>
 	</array>
 </dict>
