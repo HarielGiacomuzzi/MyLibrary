@@ -16,8 +16,15 @@ class MeusLivrosViewController: UIViewController {
     @IBOutlet weak var meusLivrosTableView: UITableView!
     
     override func viewWillAppear(animated: Bool) {
-        
-        self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+            self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.meusLivrosTableView.reloadData()
+            }
+        }
+
+       // self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
     }
     
     override func viewDidLoad() {
@@ -35,13 +42,26 @@ class MeusLivrosViewController: UIViewController {
     func tableView(tableView: UITableView,
         cellForRowAtIndexPath
         indexPath: NSIndexPath) -> MeusLivrosTableViewCell {
-            
+            var libraryName = ""
             let cell = tableView.dequeueReusableCellWithIdentifier("meusLivrosCell") as! MeusLivrosTableViewCell
             
             cell.nomeLabel.text = arrayBooks[indexPath.row].objectForKey("title") as? String
             //cell.bibliotecaLabel.text = arrayBooks[indexPath.row].objectForKey("libraryid") as? String
             
-            cell.bibliotecaLabel.text = parseMngr.returnLibraryName((arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!)
+            
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+                libraryName = self.parseMngr.returnLibraryName((self.arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!)
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    cell.bibliotecaLabel.text = libraryName
+                }
+            }
+            
+
+            
+            
+            
+            
             let userImageFile = arrayBooks[indexPath.row].objectForKey("bookCover") as! PFFile
             cell.imageView?.image = UIImage(data: userImageFile.getData()!)
             
@@ -71,18 +91,30 @@ class MeusLivrosViewController: UIViewController {
     
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]? {
         var button1 = UITableViewRowAction(style: .Default, title: "Devolver!", handler: { (action, indexPath) in
-            self.parseMngr.bookGetBack((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
-            self.arrayBooks.removeAtIndex(indexPath.row)
-            self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            self.meusLivrosTableView.reloadData()
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+                self.parseMngr.bookGetBack((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
+                self.arrayBooks.removeAtIndex(indexPath.row)
+                self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.meusLivrosTableView.reloadData()
+                }
+            }
         })
         button1.backgroundColor = UIColor.blueColor()
         
         var button2 = UITableViewRowAction(style: .Default, title: "Renovar!", handler: { (action, indexPath) in
-            self.parseMngr.renewBook((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
-            var date = NSDate().dateByAddingTimeInterval(3600*12*5)
-            self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
-            self.meusLivrosTableView.reloadData()
+            dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)) {
+                self.parseMngr.renewBook((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
+                var date = NSDate().dateByAddingTimeInterval(3600*12*5)
+                self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.meusLivrosTableView.reloadData()
+                }
+            }
+            
         })
         button2.backgroundColor = UIColor.orangeColor()
         
