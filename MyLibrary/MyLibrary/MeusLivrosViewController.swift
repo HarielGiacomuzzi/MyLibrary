@@ -65,12 +65,15 @@ class MeusLivrosViewController: UIViewController {
             let userImageFile = arrayBooks[indexPath.row].objectForKey("bookCover") as! PFFile
             cell.imageView?.image = UIImage(data: userImageFile.getData()!)
             
-            println("livraria",parseMngr.returnLibrary((arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!))
+//            println("livraria",parseMngr.returnLibrary((arrayBooks[indexPath.row].objectForKey("libraryid") as? String)!))
             
             var dateFormatter: NSDateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "dd/MM"
             dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
-            
+            if(dateFormatter.stringFromDate((arrayBooks[indexPath.row].objectForKey("datereserved") as? NSDate)!) == dateFormatter.stringFromDate(NSDate()))
+            {
+                cell.dataLabel.textColor = UIColor.redColor()
+            }
             cell.dataLabel.text = dateFormatter.stringFromDate((arrayBooks[indexPath.row].objectForKey("datereserved") as? NSDate)!)
             return cell
     }
@@ -95,7 +98,7 @@ class MeusLivrosViewController: UIViewController {
                 self.parseMngr.bookGetBack((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
                 self.arrayBooks.removeAtIndex(indexPath.row)
                 self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-
+                
                 
                 dispatch_async(dispatch_get_main_queue()) {
                     self.meusLivrosTableView.reloadData()
