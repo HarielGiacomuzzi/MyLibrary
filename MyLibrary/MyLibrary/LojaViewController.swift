@@ -63,18 +63,18 @@ class LojaViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(SKPaymentQueue.canMakePayments()){
-            var infoAlert = UIAlertController(title: "Info", message: "Thank you for purchasing", preferredStyle: UIAlertControllerStyle.Alert)
+            var infoAlert = UIAlertController(title: "Sucesso", message: "Obrigado pela compra", preferredStyle: UIAlertControllerStyle.Alert)
             
-            infoAlert.addAction(UIAlertAction(title: "got it !", style: .Default, handler: { (action: UIAlertAction!) in
+            infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
             }))
             
             self.presentViewController(infoAlert, animated: true, completion: nil)
             //let payment:SKPayment = SKPayment(product: removeAdsProduct)
             //SKPaymentQueue.defaultQueue().addPayment(payment)
         }else{
-            var infoAlert = UIAlertController(title: "Info", message: "Sorry But you can't do purchases.", preferredStyle: UIAlertControllerStyle.Alert)
+            var infoAlert = UIAlertController(title: "Erro", message: "Desculpe, mas você não pode realizar compras", preferredStyle: UIAlertControllerStyle.Alert)
             
-            infoAlert.addAction(UIAlertAction(title: "got it !", style: .Default, handler: { (action: UIAlertAction!) in
+            infoAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
             }))
             
             self.presentViewController(infoAlert, animated: true, completion: nil)
