@@ -33,13 +33,24 @@ class BeaconViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         // testing Variables
-        bookTittle = "Divina Comédia"
-        bookLocation = "Biblioteca Pucrs - 3ro andar - prateleira 6c"
-        beaconUUID = NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")
-        beaconIdentifier = "com.example.apple-samplecode.AirLocate"
-        beaconMajor = 2
-        beaconMinor = 1
-        
+        if(bookTittle == nil){
+            bookTittle = "Divina Comédia"
+        }
+        if(bookLocation == nil){
+            bookLocation = "Biblioteca Pucrs - 3ro andar - prateleira 6c"
+        }
+        if(beaconUUID == nil){
+            beaconUUID = NSUUID(UUIDString: "E2C56DB5-DFFB-48D2-B060-D0F5A71096E0")
+        }
+        if(beaconIdentifier == nil){
+            beaconIdentifier = "com.example.apple-samplecode.AirLocate"
+        }
+        if(beaconMinor == nil){
+            beaconMinor = 1
+        }
+        if(beaconMajor == nil){
+            beaconMajor = 2
+        }
         // testing Variables
         
         
