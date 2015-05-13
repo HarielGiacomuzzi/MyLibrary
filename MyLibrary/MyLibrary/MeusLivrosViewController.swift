@@ -67,7 +67,7 @@ class MeusLivrosViewController: UIViewController {
             self.meusLivrosTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             self.meusLivrosTableView.reloadData()
         })
-        button1.backgroundColor = UIColor.blueColor()
+        button1.backgroundColor = UIColor(red: 67/255, green: 93/255, blue: 168/255, alpha: 1)
         
         var button2 = UITableViewRowAction(style: .Default, title: "Renovar!", handler: { (action, indexPath) in
             self.parseMngr.renewBook((self.arrayBooks[indexPath.row].objectForKey("id") as? String)!)
@@ -75,7 +75,7 @@ class MeusLivrosViewController: UIViewController {
             self.arrayBooks = self.parseMngr.returnBooksByUser() as! [(NSDictionary)]
             self.meusLivrosTableView.reloadData()
         })
-        button2.backgroundColor = UIColor.orangeColor()
+        button2.backgroundColor = UIColor(red: 120/255, green: 195/255, blue: 97/255, alpha: 1)
         
         
         return [button1,button2]
